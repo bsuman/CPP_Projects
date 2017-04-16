@@ -3,11 +3,9 @@
 #include<vector>
 class StackDArray
 {	
-public: 
-
-	int *dataArr;
 	int top = -1;
-
+public: 
+	int *dataArr;
 	bool isEmpty()
 	{
 		if (top == -1)
