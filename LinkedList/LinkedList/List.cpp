@@ -16,8 +16,6 @@ void llist::insertNode(int data)
 			 curr = curr->next;
 		curr->next = temp;
 	}
-		
-
 }
 
 void llist::deleteData(int data)
@@ -58,6 +56,26 @@ void llist::displayList()
 		{
 			std::cout << curr->data << std::endl;
 			curr = curr->next;
+		}
+	}
+}
+
+void llist::getData()
+{
+	if (head == nullptr)
+		std::cout << "List is empty" << std::endl;
+	else
+	{
+		Node* curr = head;
+		std::vector<int> dataList;
+		while (curr != nullptr)
+		{
+			dataList.push_back(curr->data);
+			curr = curr->next;
+		}
+		for (int i= dataList.size()-1;i>=0;i--)
+		{
+			std::cout << dataList[i] << std::endl;
 		}
 	}
 }

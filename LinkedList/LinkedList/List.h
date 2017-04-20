@@ -1,5 +1,5 @@
 #pragma once
-
+#include<vector>
 struct Node
 {
 	int data;
@@ -26,6 +26,6 @@ public:
 	void insertNode(int data);
 	void deleteData(int data);
 	void displayList();
-
+	void getData();
 
 };

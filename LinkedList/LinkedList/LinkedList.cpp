@@ -10,9 +10,11 @@ int main()
 	l.insertNode(10);
 	l.insertNode(12);
 	l.insertNode(13);
-	l.displayList();
-	l.deleteData(12);
-	l.displayList();
+	l.insertNode(14);
+	l.insertNode(15);
+	//l.displayList();
+	//l.deleteData(12);
+	l.getData();
 
     return 0;
 }
