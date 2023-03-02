@@ -1,0 +1,3 @@
+﻿  Search2DMatrix.cpp
+C:\Users\Admin\OneDrive\Documents\GitHub\CPP_Projects\Search2DMatrix\Search2DMatrix\Search2DMatrix.cpp(40,85): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Search2DMatrix.vcxproj -> C:\Users\Admin\OneDrive\Documents\GitHub\CPP_Projects\Search2DMatrix\x64\Debug\Search2DMatrix.exe

@@ -1,0 +1,8 @@
+﻿  FindElementInRotatedList.cpp
+C:\Users\Admin\OneDrive\Documents\GitHub\CPP_Projects\FindElementInRotatedList\FindElementInRotatedList\FindElementInRotatedList.cpp(42,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+  3 of 84 functions ( 3.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  FindElementInRotatedList.vcxproj -> C:\Users\Admin\OneDrive\Documents\GitHub\CPP_Projects\FindElementInRotatedList\x64\Release\FindElementInRotatedList.exe
