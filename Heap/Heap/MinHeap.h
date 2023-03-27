@@ -75,27 +75,21 @@ public:
 
 	T pop()
 	{
-		try {
-			if (heap.size() == 1)
-			{
-				T tmp = heap.back();
-				heap.pop_back();
-				return tmp;
-			}
-			else if(heap.size()>1)
-			{
-				T tmp = heap[0];
-				heap[0] = heap.back();
-				heap.pop_back();
-				heapify_down();
-				return tmp;
-			}
-			else {
-				throw out_of_range("Heap Empty!");
-			}
+		if (heap.size() == 1)
+		{
+			T tmp = heap.back();
+			heap.pop_back();
+			return tmp;
 		}
-		catch (const std::out_of_range& oor) {
-			cout << oor.what() << endl;
+		else if(heap.size()>1)
+		{
+			T tmp = heap[0];
+			heap[0] = heap.back();
+			heap.pop_back();
+			heapify_down();
+			return tmp;
+		}
+		else {
 			return -1;
 		}
 	}
@@ -103,13 +97,11 @@ public:
 
 	T peek()
 	{
-		try
-		{
+		if(heap.size()>=1){
 			T tmp = heap[0];
 			return tmp;
 		}
-		catch (const std::out_of_range& oor) {
-			cout << "Heap Empty:" << oor.what() << endl;
+		else{
 			return -1;
 		}
 	}
