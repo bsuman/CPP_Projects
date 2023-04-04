@@ -14,5 +14,6 @@ int main() {
 	cout << " Can the car park ? " << canpark << endl;
 	canpark = ptr_ps->addCar(1) ? "Yes" : "No";
 	cout << " Can the car park ? " << canpark << endl;
+	delete ptr_ps;
 	return 0;
 }
