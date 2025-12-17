@@ -4,18 +4,26 @@
 #include <mutex>
 
 static int shared_val = 0;
-std::mutex val_lock;
+static std::mutex val_lock;
 
-void func(int num) {
-	using namespace std; 
-	cout << "Current thread id is: " << this_thread::get_id() <<endl;
-	cout << "Passed argument is " << num << endl;
-}
+namespace {
 
-void increment_data() {
-	val_lock.lock();
-	shared_val = shared_val + 1;
-	val_lock.unlock();
+	void func(int num) {
+		using namespace std;
+		cout << "Current thread id is: " << this_thread::get_id() << endl;
+		cout << "Passed argument is " << num << endl;
+	}
+
+	void increment_data() {
+		using namespace std;
+		std::cout << "fetching the lock" << this_thread::get_id() << endl;
+		val_lock.lock();
+		std::cout << "holding the lock" << this_thread::get_id() << endl;
+		// critical section protected by lock and unlock of the mutex
+		shared_val = shared_val + 1;
+		// thread which holds the lock never unlocks
+		val_lock.unlock();
+	}
 }
 
 int main() {
@@ -56,7 +64,7 @@ int main() {
 	// The final value of the shared_value depends on order of execution and data access. 
 	std::vector<thread> dataThreads;
 	for (int index = 0; index < 10; index++)
-		dataThreads.emplace_back(thread{ &increment_data});
+		dataThreads.emplace_back(thread{ &increment_data });
 
 	for (int index = 0; index < 10; index++)
 		dataThreads[index].join();
@@ -72,5 +80,6 @@ int main() {
 	}
 	cout << "Current main thread id: " << this_thread::get_id() << endl;
 	cout << "Data value:" << shared_val << endl;
+
 	return 0;
 }
